@@ -24,4 +24,5 @@ scale = Vector2( 0.45, 0.4 )
 
 [node name="LaserSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -15.0
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="queue_free"]

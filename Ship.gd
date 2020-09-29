@@ -4,7 +4,9 @@ const ExplosionEffect = preload("res://ExplosionEffect.tscn")
 const Laser = preload("res://Laser.tscn")
 
 export(int) var SPEED = 100
-	
+
+signal player_death
+
 func _process(delta):
 	if Input.is_action_pressed("ui_up"):
 		position.y -= SPEED * delta
@@ -29,3 +31,4 @@ func _exit_tree():
 	var explosionEffect = ExplosionEffect.instance()
 	main.add_child(explosionEffect)
 	explosionEffect.global_position = global_position
+	emit_signal("player_death")
