@@ -29,6 +29,6 @@ func _on_Ship_area_entered(area):
 func _exit_tree():
 	var main = get_tree().current_scene
 	var explosionEffect = ExplosionEffect.instance()
-	main.add_child(explosionEffect)
+	main.call_deferred("add_child", explosionEffect)
 	explosionEffect.global_position = global_position
 	emit_signal("player_death")

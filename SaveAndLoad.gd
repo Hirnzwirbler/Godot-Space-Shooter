@@ -1,6 +1,8 @@
 extends Node
 
 const SAVE_DATA_PATH = "res://save_data.json"
+# Most of the time you should use "user://save_data.json"
+# But this is fine for testing purposes
 
 var default_save_data = {
 	highscore = 0,
